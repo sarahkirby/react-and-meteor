@@ -7,24 +7,21 @@ import ResolutionSingle from './ResolutionSingle.jsx';
 Resolutions = new Mongo.Collection("resolutions");
 
 // only need to use TrackerReact when you are pulling in data
-export default class App extends TrackerReact(React.Component) {
+export default class ResolutionsWrapper extends TrackerReact(React.Component) {
 
 	resolutions() {
-		// .find() returns all reasolutions in collection(db). fetch returns an object
+		// Mongo query - .find() returns all reasolutions in collection(db). fetch returns an object
 		return Resolutions.find().fetch();
 	}
 	render() {
-		// grabbing the entire object (all resolutions) from db
-		let res = this.resolutions();
-		console.log(res);
-		// {res[0]} grabbing first resolution from (db) ^above 'let res'. Then passing it into the variable
-		// resolution - which is called a prop. Accessing this prop in ResolutionSingle.
 		return (
 			<div>
 				<h1>My Resolutions</h1>
 				<ResolutionsForm />
-				<ul>
-					<ResolutionSingle resolution={res[0]} />
+				<ul className="resolutions">
+					{this.resolutions().map((resolution)=>{
+						return <ResolutionSingle key={resolution._id} resolution={resolution} />
+					})}
 				</ul>
 			</div>
 		)

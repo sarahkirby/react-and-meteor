@@ -8,7 +8,7 @@ export default class ResolutionSingle extends Component {
 		return (
 			<li>
 				{this.props.resolution.text}
-				{this.props.resolution.complete.toString}
+				{this.props.resolution.complete.toString()}
 			</li>
 		)
 	}
