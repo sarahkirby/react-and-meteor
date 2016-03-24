@@ -7,14 +7,13 @@ export default class ResolutionsForm extends Component {
 		// stop page from reloading
 		event.preventDefault();
 		var text = this.refs.resolution.value.trim();
-
-		Resolutions.insert({
-			text: text,
-			complete: false,
-			createdAt: new Date()
+		// calling addResolution function and passing in the arguments. Then a callback
+		// When function is complete it will clear the text input = "";
+		Meteor.call('addResolution', text, ()=>{
+			this.refs.resolution.value = "";
 		});
 
-		this.refs.resolution.value = "";
+		
 	}
 	render() {
 		return (
