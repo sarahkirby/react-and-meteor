@@ -12,6 +12,7 @@ export default class ResolutionsWrapper extends TrackerReact(React.Component) {
 		super();
 		// this.state belongs to this component only
 		// this.state.subscription.resolutions = all resolutions in db (?)
+		// Tracker React allows us to use Meteor.subscribe functions
 		this.state = {
 			subscription: {
 				resolutions: Meteor.subscribe("allResolutions")

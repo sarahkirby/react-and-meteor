@@ -8,5 +8,14 @@ Meteor.methods({
 			complete: false,
 			createdAt: new Date()
 		});
+	},
+	toggleResolution(id, status) {
+		// takes the id and changed complete to the opposite of what it was before
+		Resolutions.update(id, {
+			$set: {complete: ! status}
+		});
+	},
+	deleteResolution(id) {
+		Resolutions.remove(id);
 	}
 });
