@@ -14,13 +14,19 @@ export default class ResolutionSingle extends Component {
 		Meteor.call('deleteResolution', this.props.resolution);
 	}
 	render() {
+		// constant variable. 
+		// if the resolution is checked (complete=true) add a class of checked. Else no class.
+		const resolutionClass = this.props.resolution.complete ? "checked" : "";
+		const status = this.props.resolution.complete ? <span className="completed">Completed</span> : '';
+
 		return (
-			<li>
+			<li className={resolutionClass}>
 			<input type="checkbox"
 				readOnly={true}
 				checked={this.props.resolution.complete}
 				onClick={this.toggleChecked.bind(this)} />
 				{this.props.resolution.text}
+				{status}
 				<button className="btn-cancel"
 					onClick={this.deleteResolution.bind(this)}>
 					&times;
