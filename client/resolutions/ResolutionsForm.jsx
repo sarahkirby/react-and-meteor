@@ -10,11 +10,17 @@ export default class ResolutionsForm extends Component {
 		// calling addResolution function and passing in the arguments. Then a callback
 		// When function is complete it will clear the text input = "";
 		// ()=> arrow function changes the context of 'this' keyword. Meaning we can use 'this'
-		Meteor.call('addResolution', text, ()=>{
-			this.refs.resolution.value = "";
-		});
-
-		
+		// Bert.alert comes from a meteor package
+		// if(text) - making sure the input field is not blank
+		if(text) {
+			Meteor.call('addResolution', text, (error, data)=>{
+				if(error) {
+					Bert.alert('Please login before submitting', 'danger', 'fixed-top', 'fa-frown-o');
+				} else {
+				this.refs.resolution.value = "";
+				}
+			});
+		}
 	}
 	render() {
 		return (

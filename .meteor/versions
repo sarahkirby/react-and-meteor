@@ -32,6 +32,8 @@ ejson@1.0.8-beta.12
 email@1.0.9-beta.12
 es5-shim@4.3.2-beta.12
 fastclick@1.0.8-beta.12
+fortawesome:fontawesome@4.4.0_1
+fourseven:scss@3.3.3_3
 geojson-utils@1.0.5-beta.12
 gwendall:body-events@0.1.6
 hot-code-push@1.0.1-beta.12
@@ -100,6 +102,7 @@ standard-minifier-js@1.0.3-beta.12
 stolinski:stylus-multi@1.4.3
 templating@1.1.6-beta.12
 templating-tools@1.0.1-beta.12
+themeteorchef:bert@2.1.0
 tracker@1.0.10-beta.12
 ui@1.0.8
 ultimatejs:tracker-react@1.0.0

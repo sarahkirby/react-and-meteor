@@ -28,10 +28,10 @@ export default class ResolutionsWrapper extends TrackerReact(React.Component) {
 		// Mongo query - .find() returns all reasolutions in collection(db). fetch returns an object
 		return Resolutions.find().fetch();
 	}
+	// grabbing the session variable test from about.
 	render() {
 		return (
 			<div>
-			// grabbing the session variable test from about.
 				<h1>My Resolutions - {Session.get('test')}</h1>
 				<ResolutionsForm />
 				<ul className="resolutions">
