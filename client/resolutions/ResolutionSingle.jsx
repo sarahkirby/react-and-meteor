@@ -14,7 +14,7 @@ export default class ResolutionSingle extends Component {
 		Meteor.call('deleteResolution', this.props.resolution);
 	}
 	render() {
-		// constant variable. 
+		// constant variable. keep conditionals outside of your return statement
 		// if the resolution is checked (complete=true) add a class of checked. Else no class.
 		const resolutionClass = this.props.resolution.complete ? "checked" : "";
 		const status = this.props.resolution.complete ? <span className="completed">Completed</span> : '';
