@@ -1,4 +1,7 @@
 accounts-base@1.2.3-beta.12
+accounts-password@1.1.5-beta.12
+accounts-ui@1.1.6
+accounts-ui-unstyled@1.1.9-beta.12
 allow-deny@1.0.1-beta.12
 autoupdate@1.2.5-beta.12
 babel-compiler@6.5.0-beta.12
@@ -40,6 +43,7 @@ jquery@1.11.5-beta.12
 kadira:flow-router@2.10.1
 lai:collection-extensions@0.1.4
 launch-screen@1.0.6-beta.12
+less@2.5.2-beta.12
 livedata@1.0.15
 localstorage@1.0.6-beta.12
 logging@1.0.9-beta.12
@@ -73,6 +77,7 @@ mongo@1.1.4-beta.12
 mongo-id@1.0.1
 msavin:jetsetter@1.5.2
 msavin:mongol@1.6.2
+npm-bcrypt@0.7.8_2
 npm-mongo@1.4.40-beta.12
 observe-sequence@1.0.8-beta.12
 ordered-dict@1.0.4
@@ -86,8 +91,10 @@ retry@1.0.4
 routepolicy@1.0.7-beta.12
 service-configuration@1.0.6-beta.12
 session@1.1.2-beta.12
+sha@1.0.4
 spacebars@1.0.8-beta.12
 spacebars-compiler@1.0.8-beta.12
+srp@1.0.5-beta.12
 standard-minifier-css@1.0.3-beta.12
 standard-minifier-js@1.0.3-beta.12
 stolinski:stylus-multi@1.4.3
