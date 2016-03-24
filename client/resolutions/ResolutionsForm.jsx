@@ -9,6 +9,7 @@ export default class ResolutionsForm extends Component {
 		var text = this.refs.resolution.value.trim();
 		// calling addResolution function and passing in the arguments. Then a callback
 		// When function is complete it will clear the text input = "";
+		// ()=> arrow function changes the context of 'this' keyword. Meaning we can use 'this'
 		Meteor.call('addResolution', text, ()=>{
 			this.refs.resolution.value = "";
 		});
