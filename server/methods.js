@@ -2,6 +2,8 @@
 Meteor.methods({
 	// accepts the object (resolution) - db collect ?
 	addResolution(resolution) {
+		// check is a meteor package. It checks the variable and here it makes sure it is a string.
+		check(resolution, String);
 		// if there is no user id
 		if(!Meteor.userId()) {
 			throw new Meteor.Error('not authorised');
@@ -15,6 +17,7 @@ Meteor.methods({
 		});
 	},
 	toggleResolution(resolution) {
+		check(resolution, Object);
 		// only auth to update if resolution belongs to user
 		if(Meteor.userId() !== resolution.user) {
 			throw new Meteor.Error('not-authorised');
@@ -25,6 +28,7 @@ Meteor.methods({
 		});
 	},
 	deleteResolution(resolution) {
+		check(resolution, String);
 		if(Meteor.userId() !== resolution.user) {
 			throw new Meteor.Error('not-authorised');
 		}
