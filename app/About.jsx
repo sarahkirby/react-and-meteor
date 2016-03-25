@@ -8,6 +8,8 @@ export default class About extends Component {
 	}
 	// setting a meteor session variable on click
 	render() {
+		// DocHead makes page title
+		DocHead.setTitle('About | My Resolutions');
 		return (
 			<ReactCSSTransitionGroup 
 				component="div"

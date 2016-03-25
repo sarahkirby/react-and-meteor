@@ -5,8 +5,9 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ResolutionsForm from './ResolutionsForm.jsx';
 import ResolutionSingle from './ResolutionSingle.jsx';
 // creating database - resoltuions
+if(Meteor.isClient) {
 Resolutions = new Mongo.Collection("resolutions");
-
+}
 // only need to use TrackerReact when you are pulling in data
 export default class ResolutionsWrapper extends TrackerReact(React.Component) {
 	constructor() {
@@ -31,6 +32,7 @@ export default class ResolutionsWrapper extends TrackerReact(React.Component) {
 	}
 	// grabbing the session variable test from about.
 	render() {
+		DocHead.setTitle('My Resolutions For This Month');
 		return (
 			<ReactCSSTransitionGroup 
 			component="div"
